@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .calculator { margin: 20px; }
+        input, select { margin: 5px; }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="number" id="leftOperand" placeholder="Left operand" min="0">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input type="number" id="rightOperand" placeholder="Right operand" min="0">
+        <input type="submit" id="calculateButton" value="Try me!">
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#calculateButton').click(function() {
+                let left = parseInt($('#leftOperand').val());
+                let right = parseInt($('#rightOperand').val());
+                let operator = $('#operator').val();
+                let result;
+
+                if (isNaN(left) || isNaN(right) || left < 0 || right < 0) {
+                    alert("Error :(");
+                    return;
+                }
+
+                if (operator === '/' && right === 0) {
+                    alert("It's over 9000!");
+                    console.log("It's over 9000!");
+                    return;
+                } else if (operator === '%' && right === 0) {
+                    alert("It's over 9000!");
+                    console.log("It's over 9000!");
+                    return;
+                }
+
+                switch (operator) {
+                    case '+':
+                        result = left + right;
+                        break;
+                    case '-':
+                        result = left - right;
+                        break;
+                    case '*':
+                        result = left * right;
+                        break;
+                    case '/':
+                        result = left / right;
+                        break;
+                    case '%':
+                        result = left % right;
+                        break;
+                }
+
+                alert("Result: " + result);
+                console.log(result);
+            });
+
+            setInterval(function() {
+                alert("Please, use me...");
+            }, 30000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #ft_list { border: 1px solid #ccc; padding: 10px; width: 300px; max-height: 300px; overflow-y: auto; }
+        .todo-item { padding: 5px; border: 1px solid #000; margin-bottom: 5px; cursor: pointer; }
+        .todo-item:hover { background: #f0f0f0; }
+    </style>
+</head>
+<body>
+
+    <button id="new-todo">New</button>
+    <div id="ft_list"></div>
+
+    <script>
+        $(function() {
+            const loadTodos = () => (JSON.parse(getCookie("todoList") || "[]")).forEach(addTodo);
+            const addTodo = todo => $('#ft_list').prepend(`<div class="todo-item">${todo}</div>`);
+            const saveTodos = () => setCookie("todoList", JSON.stringify($('#ft_list .todo-item').map((_, el) => $(el).text()).get()), 7);
+            const setCookie = (name, value, days) => document.cookie = `${name}=${value}; expires=${days ? new Date(Date.now() + days * 864e5).toUTCString() : ''}; path=/`;
+            const getCookie = name => document.cookie.split('; ').find(row => row.startsWith(name + '='))?.split('=')[1] || null;
+
+            $('#new-todo').click(() => {
+                const newTodo = prompt("Enter a new TO DO:");
+                if (newTodo) { addTodo(newTodo); saveTodos(); }
+            });
+
+            $(document).on('click', '.todo-item', function() {
+                if (confirm(`Remove "${$(this).text()}"?`)) {
+                    $(this).remove();
+                    saveTodos();
+                }
+            });
+
+            loadTodos();
+        });
+    </script>
+
+</body>
+</html>
+

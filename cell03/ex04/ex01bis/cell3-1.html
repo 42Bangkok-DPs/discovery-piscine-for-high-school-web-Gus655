@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balloon Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="balloon"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let size = 200;
+            const colors = ['red', 'green', 'blue'];
+            let colorIndex = 0;
+
+            $('#balloon').click(function() {
+                size += 10;
+
+                // Check for explosion
+                if (size > 420) {
+                    size = 200; // Reset size
+                }
+
+                $(this).css({
+                    width: size + 'px',
+                    height: size + 'px',
+                    backgroundColor: colors[colorIndex]
+                });
+
+                // Update color index
+                colorIndex = (colorIndex + 1) % colors.length;
+            });
+
+            $('#balloon').mouseleave(function() {
+                size = Math.max(size - 5, 200); // Prevent size going below 200
+                colorIndex = (colorIndex - 1 + colors.length) % colors.length; // Reverse color index
+
+                $(this).css({
+                    width: size + 'px',
+                    height: size + 'px',
+                    backgroundColor: colors[colorIndex]
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
