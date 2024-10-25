@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: lightskyblue;
+}
+
+.main {
+    background-color: white;
+    padding: 5px;
+}
+
+.mbox {
+    width: auto;
+    top: 30%;
+    left: 30%;
+    right: 30%;
+    position: absolute;
+}
+
+body {
+    .mbox {
+        text-align: center;
+     }
+}
+
+body {
+    .mbox {
+        h1{
+        font-size: 300%;
+    }
+    p1 {
+        font-size: 200%;
+    }
+    p2 {
+        font-size: 250%;
+    }
+}
+
+}
+
+p2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.imgp {
+    background-color: brown;
+    width: 183px;
+    height: 275;
+    border-radius: 20px;
+}
+
+.profile-card1 {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+    color: black;
+}
+
+.profile-card1:hover {
+    transform: scale(1.1); /* Slight upward movement */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+.profile-card2 {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+    color: black;
+}
+
+.profile-card2:hover {
+    transform: scale(1.1); /* Slight upward movement */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+.procard {
+    display: flex;
+    justify-content: space-around;
+}
+
+.HePo {
+  font-size: 30px;
+  background-color: white;
+  width: 500px;
+  border-radius: 20px;
+}
