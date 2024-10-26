@@ -1,35 +1,29 @@
 #navbar {
     position: sticky;
     top: 0;
-    overflow: hidden;
-    z-index:1;
+    z-index: 1;
 }
 
 #navbar a {
-    float: left;
-    font-size: 50px;
+    font-size: 50px; 
     color: white;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
 }
 
 #navbar a:hover {
     background-color: SandyBrown;
-  }
+}
+
+ul {
+    overflow: hidden;
+    background-color: black;
+}
 
 li {
     float: left;
     font-size: 200%;
     margin-right: 100px;
-}
-
-ul {
-    overflow: hidden;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: black;
 }
 
 li a {
@@ -40,16 +34,11 @@ li a {
     text-decoration: none;
 }
 
-i a:hover {
-    background-color: #111;
-}
-
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-
 }
 
 .part1 {
@@ -72,7 +61,6 @@ i a:hover {
     font-size: 300%;
     text-align: center;
     font-family: cursive;
-    display: block;
     background-color: white;
     width: 20%;
     margin-left: auto;
@@ -80,7 +68,9 @@ i a:hover {
     border-radius: 20px;
 }
 
-.p1 {
+.datapro {
+    font-size: 500%;
+    font-family: cursive;
     width: 100px;
     height: 100px;
 }
@@ -88,11 +78,8 @@ i a:hover {
 .Cer {
     font-size: 500%;
     text-align: center;
-    font-family: cursive;
-    display: block;
+    font-family: cursive;   
 }
-
-
 
 .Box1 {
     background-color: white;
@@ -110,7 +97,7 @@ i a:hover {
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s;
 }
 
 .profile-card:hover {
@@ -118,17 +105,10 @@ i a:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.profile-image {
-    border-radius: 10px;
-    max-width: 400px;
-    margin-bottom: 15px;
-}
-
 .Con {
     font-size: 500%;
     text-align: center;
     font-family: cursive;
-    display: block;
 }
 
 .pcer1 {
@@ -139,18 +119,12 @@ i a:hover {
     display: flex;
 }
 
-.datapro {
-    font-size: 500%;
-    font-family: cursive;
-}
-
 .datacon {
     text-align: center;
     background-color: white;
-    width: 20%;
+    width: 15%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px;
-    justify-content: center;
     font-family: cursive;
 }
